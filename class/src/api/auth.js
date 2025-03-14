@@ -11,5 +11,5 @@ export async function authHandler( action, user ) {
     if (response.ok) {
         return result;
     }
-    throw new Error(result.msg)
+    throw new Error(result.msg);
 }

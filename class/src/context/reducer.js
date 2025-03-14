@@ -9,8 +9,6 @@ const reducer = (state, actions) => {
 const {type, payload} = actions;
 switch (type) {
     case LOG_IN:
-        console.log("log_in");
-        
         
         break;
 

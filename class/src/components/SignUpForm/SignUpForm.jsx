@@ -11,8 +11,7 @@ const SignUpForm = () => {
         email: "",
         password: "",
     });
-    const [isLoading, setIsLoading] = useState(false)
-
+    const [isLoading, setIsLoading] = useState(false);
     const submitHandler = (e) => {
         e.preventDefault();
         setIsLoading(true)

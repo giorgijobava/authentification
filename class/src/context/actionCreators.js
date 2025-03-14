@@ -10,3 +10,5 @@ const authenticateAction = (token) => {
         payload: token,
     }
 }
+
+export { LogInAction, authenticateAction};
