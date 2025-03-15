@@ -1,0 +1,105 @@
+
+.posterImage {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.posterImage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.posterImage__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    transition: opacity 0.3s;
+}
+
+.posterImage__title {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.posterImage__runtime {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.posterImage__rating {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+}
+
+.posterImage__description {
+    font-style: italic;
+    font-size: 1rem;
+    max-width: 60%;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .posterImage {
+        height: 500px;
+    }
+    .posterImage__title {
+        font-size: 2.5rem;
+    }
+    .posterImage__runtime {
+        font-size: 1.2rem;
+    }
+    .posterImage__description {
+        max-width: 80%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .posterImage {
+        height: 400px;
+    }
+    .posterImage__overlay {
+        padding: 2rem;
+    }
+    .posterImage__title {
+        font-size: 2rem;
+    }
+    .posterImage__runtime {
+        font-size: 1rem;
+    }
+    .posterImage__description {
+        max-width: 90%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .posterImage {
+        height: 300px;
+    }
+    .posterImage__overlay {
+        padding: 1.5rem;
+    }
+    .posterImage__title {
+        font-size: 1.5rem;
+    }
+    .posterImage__runtime {
+        font-size: 0.9rem;
+    }
+    .posterImage__description {
+        max-width: 100%;
+        font-size: 0.7rem;
+    }
+}

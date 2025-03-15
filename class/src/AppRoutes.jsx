@@ -1,23 +1,3 @@
-// import React from "react";
-// import { Routes, Route } from "react-router-dom";
-// import appRoutes from "./config/routes";
-
-// const AppRoutes = () => {
-//     return (
-//          <Routes>
-//             {appRoutes.map((route) => {
-//                 return(
-//                    <Route
-//                        key={route.path}
-//                        path={route.path}
-//                        element={<route.Component />}
-//                  />
-//             );
-//         })}
-//     </Routes>
-//     );
-// };
-
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import appRoutes from "./config/routes";
@@ -26,11 +6,24 @@ const AppRoutes = () => {
     return (
         <Routes>
             {appRoutes.map((route) => {
-                 return(  
+                if (route.Guard) {
+                    return (
+                        <Route
+                            key={route.path}
+                            path={route.path}
+                            element={
+                                <route.Guard>
+                                    <route.Component />
+                                </route.Guard>
+                            }
+                        />
+                    );
+                }
+                return (
                     <Route
-                    key={route.path}
-                    path={route.path}
-                    element={<route.Component />}
+                        key={route.path}
+                        path={route.path}
+                        element={<route.Component />}
                     />
                 );
             })}
@@ -39,3 +32,5 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
+

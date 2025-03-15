@@ -1,0 +1,150 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.list__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.cards {
+    position: relative;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+.cards__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.cards__overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.card__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card__runtime {
+    font-size: 0.9rem;
+}
+
+.card__rating {
+    margin-left: 10px;
+    color: #ffd700;
+}
+
+.card__description {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #666;
+}
+
+.pagination button.active {
+    background-color: #ffd700;
+    font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+    .list__cards {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .cards {
+        border-radius: 8px;
+    }
+
+    .card__title {
+        font-size: 1.1rem;
+    }
+
+    .card__runtime {
+        font-size: 0.85rem;
+    }
+
+    .card__description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .list__cards {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .list__cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .pagination button {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}
